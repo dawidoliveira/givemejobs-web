@@ -1,0 +1,15 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    # ------ Disable individual rules ----- #
+    #                 ---                   #
+    # Turn off what you don't like.         #
+    # ------------------------------------- #
+    use_key_in_widget_constructors: false
+    sort_pub_dependencies: false
+    argument_type_not_assignable: false
+    avoid_setters_without_getters: false
+    non_constant_default_value: false
+    sort_child_properties_last: false
+    avoid_web_libraries_in_flutter: false
