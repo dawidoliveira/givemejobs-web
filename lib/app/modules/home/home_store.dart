@@ -1,4 +1,5 @@
 import 'dart:html' as html;
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -41,6 +42,13 @@ class HomeStore extends NotifierStore<Exception, HomeState> {
     final anchorElement = html.AnchorElement(href: url);
     anchorElement.download = url;
     anchorElement.click();
+  }
+
+  Future<void> changePage(int page) async {
+    state.pageController.animateToPage(page,
+        duration: kThemeAnimationDuration, curve: Curves.linear);
+    final newState = state.copyWith(selectPage: page);
+    update(newState);
   }
 
   Future<void> removeVacancy(
@@ -170,13 +178,6 @@ class HomeStore extends NotifierStore<Exception, HomeState> {
     Modular.to.pushReplacementNamed('/login');
   }
 
-  set changePage(int page) {
-    final newState = state.copyWith();
-    newState.selectPage = page;
-    newState.scaffoldKey.currentState!.openEndDrawer();
-    update(newState);
-  }
-
   Future<void> setFile() async {
     final FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -211,6 +212,7 @@ class HomeStore extends NotifierStore<Exception, HomeState> {
         userId: user.id,
       );
       final newState = state.copyWith(vacancies: state.vacancies..add(vacancy));
+      changePage(2);
       newState.clear();
       update(newState);
     }

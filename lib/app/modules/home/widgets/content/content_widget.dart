@@ -57,9 +57,7 @@ class ContentWidget extends StatelessWidget {
                         labelButton: 'Mais informações',
                         labelCount: store.state.totalVacancies.toString(),
                         labelDescription: 'Vagas postadas',
-                        onPressed: () {
-                          store.changePage = 2;
-                        },
+                        onPressed: () => store.changePage(2),
                       ),
                     ),
                   ],

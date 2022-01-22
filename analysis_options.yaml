@@ -13,3 +13,4 @@ linter:
     non_constant_default_value: false
     sort_child_properties_last: false
     avoid_web_libraries_in_flutter: false
+    require_trailing_commas: false

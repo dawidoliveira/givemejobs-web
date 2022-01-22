@@ -28,7 +28,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
       ),
       child: widget.store != null
           ? TripleBuilder(
-              store: widget.store!,
+              store: widget.store,
               builder: (context, triple) {
                 if (triple.isLoading) {
                   return Container(

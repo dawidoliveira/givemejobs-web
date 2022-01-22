@@ -9,16 +9,16 @@ class AuthService implements IAuthService {
   final UserRepository _userRepository;
   final FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
-  SharedPreferences? ps;
-  AuthService(this._userRepository, this._firebaseAuth, this._firestore);
+  final SharedPreferences _ps;
+
+  AuthService(
+      this._userRepository, this._firebaseAuth, this._firestore, this._ps);
 
   @override
   Future<dynamic> signInWithEmailAndPassword(
       {required String email, required String pass}) async {
-    ps = await SharedPreferences.getInstance();
     try {
       final existsAndIsAdmin = await verifyingUser(email);
-
       if (existsAndIsAdmin) {
         await _firebaseAuth
             .signInWithEmailAndPassword(email: email, password: pass)
@@ -62,10 +62,9 @@ class AuthService implements IAuthService {
 
   @override
   Future<void> logout() async {
-    ps = await SharedPreferences.getInstance();
     try {
       await _firebaseAuth.signOut();
-      await ps!.remove('user');
+      await _ps.remove('user');
     } catch (e) {
       rethrow;
     }

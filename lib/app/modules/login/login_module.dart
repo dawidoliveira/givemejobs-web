@@ -1,6 +1,6 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:give_me_jobs_web/app/modules/login/login_Page.dart';
 import 'package:give_me_jobs_web/app/modules/login/login_store.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginModule extends Module {
   @override

@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:give_me_jobs_web/app/app_module.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../app_module.dart';
 
 class LoginGuard implements RouteGuard {
   @override

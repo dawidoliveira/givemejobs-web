@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:give_me_jobs_web/app/modules/login/login_store.dart';
-import 'package:flutter/material.dart';
+import 'package:give_me_jobs_web/app/modules/login/widgets/background/background_widget.dart';
 import 'package:give_me_jobs_web/app/modules/login/widgets/card_login/card_login_widget.dart';
-import 'widgets/background/background_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

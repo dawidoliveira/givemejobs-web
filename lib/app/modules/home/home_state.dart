@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-
 import 'package:give_me_jobs_web/app/shared/models/course_model.dart';
 import 'package:give_me_jobs_web/app/shared/models/vacancy_model.dart';
 
@@ -11,6 +10,7 @@ class HomeState {
   TextEditingController qntVacancyController = TextEditingController();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final pageController = PageController();
 
   int selectPage;
   List<CourseModel> courses;

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:give_me_jobs_web/app/core/app_text_styles.dart';
 import 'package:give_me_jobs_web/app/modules/home/home_store.dart';
 import 'package:give_me_jobs_web/app/modules/home/widgets/register_vacancy/widgets/input_vacancy/input_vacancy_widget.dart';
+import 'package:give_me_jobs_web/app/modules/home/widgets/register_vacancy/widgets/select_input_course/select_input_course_widget.dart';
 import 'package:give_me_jobs_web/app/shared/widgets/button/button_widget.dart';
-
-import 'widgets/select_input_course/select_input_course_widget.dart';
 
 class RegisterVacancyWidget extends StatelessWidget {
   const RegisterVacancyWidget(

@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import '../home/home_store.dart';
-
-import 'home_page.dart';
+import 'package:give_me_jobs_web/app/modules/home/home_page.dart';
+import 'package:give_me_jobs_web/app/modules/home/home_store.dart';
 
 class HomeModule extends Module {
   @override
