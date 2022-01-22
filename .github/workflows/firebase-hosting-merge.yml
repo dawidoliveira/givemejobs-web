@@ -14,12 +14,9 @@ jobs:
       
       - name: Flutter action
         uses: subosito/flutter-action@v2.2.0
-      - run: flutter pub get && flutter analyze . && flutter build web
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.3.1
-        with:
-          path: 'build/web/'
+      - run: flutter pub get && flutter analyze .
+      - name: build web app
+      - run: flutter build web
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
