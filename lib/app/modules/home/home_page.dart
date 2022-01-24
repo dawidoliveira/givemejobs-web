@@ -33,8 +33,10 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
             CustomMenuWidget(
               store: store,
             ),
+            const VerticalDivider(thickness: 1, width: 1),
             Expanded(
               child: PageView(
+                scrollDirection: Axis.vertical,
                 controller: store.state.pageController,
                 children: [
                   ContentWidget(

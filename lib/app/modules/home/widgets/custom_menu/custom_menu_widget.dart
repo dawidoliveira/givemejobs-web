@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:give_me_jobs_web/app/core/app_images.dart';
 import 'package:give_me_jobs_web/app/core/app_responsive.dart';
-import 'package:give_me_jobs_web/app/core/app_text_styles.dart';
 import 'package:give_me_jobs_web/app/modules/home/home_store.dart';
 
 class CustomMenuWidget extends StatelessWidget {
@@ -21,26 +20,14 @@ class CustomMenuWidget extends StatelessWidget {
           : NavigationRailLabelType.selected,
       extended: AppResponsive.isWeb(context),
       leading: Container(
-        height: 62,
+        height: AppResponsive.isWeb(context) ? 150 : 200,
         color: Theme.of(context).primaryColor,
         padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              AppImages.logo,
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              'UFAL',
-              style: AppTextStyles.title.copyWith(color: Colors.white),
-            ),
-          ],
+        child: Image.asset(
+          AppImages.logo,
         ),
       ),
-      destinations: const [
+      destinations: const <NavigationRailDestination>[
         NavigationRailDestination(
           icon: Icon(Icons.dashboard),
           label: Text('Home'),
