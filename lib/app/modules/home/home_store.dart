@@ -1,5 +1,6 @@
 import 'dart:html' as html;
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -127,9 +128,17 @@ class HomeStore extends NotifierStore<Exception, HomeState> {
                     final candidate = candidates[i];
 
                     return ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.blue,
-                        foregroundImage: NetworkImage(candidate.imgUrl!),
+                      leading: CachedNetworkImage(
+                        imageUrl: candidate.imgUrl!,
+                        width: 70,
+                        height: 100,
+                        fit: BoxFit.cover,
+                        imageBuilder: (context, imageProvider) {
+                          return CircleAvatar(
+                            backgroundColor: Colors.blue,
+                            backgroundImage: imageProvider,
+                          );
+                        },
                       ),
                       title: SelectableText(candidate.name),
                       isThreeLine: candidate.curriculum != null &&
