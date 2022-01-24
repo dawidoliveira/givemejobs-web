@@ -14,6 +14,7 @@ class CustomMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
+      elevation: 1,
       onDestinationSelected: store.changePage,
       labelType: AppResponsive.isWeb(context)
           ? NavigationRailLabelType.none
@@ -45,11 +46,11 @@ class CustomMenuWidget extends StatelessWidget {
           label: Text('Home'),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.dashboard),
+          icon: Icon(Icons.edit),
           label: Text('Cadastrar vaga'),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.dashboard),
+          icon: Icon(Icons.wallet_travel_rounded),
           label: Text('Minhas vagas'),
         ),
         NavigationRailDestination(
